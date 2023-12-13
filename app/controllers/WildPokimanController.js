@@ -35,9 +35,9 @@ export class WildPokimanController {
     }  
   }
 
-  async getActivePokiman(pokimanUrl){
+  async getActivePokiman(pokemonName){
     try {
-      await wildPokimanService.getActivePokiman(pokimanUrl)
+      await wildPokimanService.getActivePokiman(pokemonName)
     } catch (error) {
       console.error(error)
       Pop.error(error)

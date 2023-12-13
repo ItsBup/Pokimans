@@ -11,13 +11,12 @@ export class Pokiman {
     }
 
     static wildListTemplate(pokemon) {
-        return `<p role="button" onclick="app.WildPokimanController.getActivePokiman('${pokemon.url}')" class="text-light selectable py-2 mb-1">${pokemon.name}</p>`
+        return `<p role="button" onclick="app.WildPokimanController.getActivePokiman('${pokemon.name}')" class="text-light selectable py-2 mb-1">${pokemon.name}</p>`
     }
 
     get ActivePokimanTemplate(){
         return `
             <div class="card col-11 p-1">
-                <img class="img-fluid listing-img rounded-top" src="${this.img}" alt="">
                 <h1 class="fw-bold text-center">${this.name} </h1>
                 <h4 class="text-dark text-center">${this.weight} | ${this.height} | ${this.types} </h4>
                 <hr />
