@@ -10,8 +10,8 @@ export class Pokiman {
         this.creatorId = data.creatorId
     }
 
-    static wildListTemplate(pokiman) {
-        return `<p class="text-light selectable py-2 mb-1">${pokiman.name}</p>`
+    static wildListTemplate(pokemon) {
+        return `<p role="button" onclick="app.WildPokimanController.getActivePokiman('${pokemon.url}')" class="text-light selectable py-2 mb-1">${pokemon.name}</p>`
     }
 
     get ActivePokimanTemplate(){

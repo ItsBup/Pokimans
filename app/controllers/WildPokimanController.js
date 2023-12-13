@@ -2,6 +2,7 @@ import { AppState } from "../AppState.js";
 import { Pokiman } from "../models/Pokiman.js";
 import { api } from "../services/AxiosService.js";
 import { wildPokimanService } from "../services/WildPokimanService.js";
+import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
 function _drawWildPokiman(){
@@ -22,11 +23,21 @@ export class WildPokimanController {
     console.log('wild has loaded')
     this.getPokimanApi()
     AppState.on('wildPokimans', _drawWildPokiman)
+    AppState.on('activePokiman', _drawActivePokiman)
   }
 
   async getPokimanApi(){
     try {
       await wildPokimanService.getPokimanApi()
+    } catch (error) {
+      console.error(error)
+      Pop.error(error)
+    }  
+  }
+
+  async getActivePokiman(pokimanUrl){
+    try {
+      await wildPokimanService.getActivePokiman(pokimanUrl)
     } catch (error) {
       console.error(error)
       Pop.error(error)
