@@ -9,7 +9,10 @@ export const pokeApi = new axios.create ({
 })
 
 class WildPokimanService {
-
+  async getPokimanApi(){
+    const response = await pokeApi.get(`pokemon`)
+    console.log(response.data)
+  }
 }
 
 export const wildPokimanService = new WildPokimanService()
