@@ -8,6 +8,9 @@ export class Pokiman {
         this.height = data.height
         this.types = data.types
         this.creatorId = data.creatorId
+    }
 
+    static wildListTemplate(pokiman) {
+        return `<p class="text-light selectable py-2 mb-1">${pokiman.name}</p>`
     }
 }
