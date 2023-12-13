@@ -11,6 +11,11 @@ function _drawWildPokiman(){
   setHTML('wild-pokimans-list', content)
 }
 
+function _drawActivePokiman(){
+  let activePokiman = AppState.activePokiman
+  let content = activePokiman.ActivePokimanTemplate
+  setHTML('active-pokiman', content)
+}
 
 export class WildPokimanController {
   constructor() {

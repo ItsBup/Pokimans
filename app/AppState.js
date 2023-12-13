@@ -7,9 +7,9 @@ class ObservableAppState extends EventEmitter {
   /**@type {import('./models/Account.js').Account | null} */
   account = null
 
-
-  /** @type{Pokiman} */
   wildPokimans = []
+
+  activePokiman = null
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
