@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { Pokiman } from "../models/Pokiman.js";
+import { api } from "../services/AxiosService.js";
 import { wildPokimanService } from "../services/WildPokimanService.js";
 import { setHTML } from "../utils/Writer.js";
 
@@ -15,6 +16,7 @@ export class WildPokimanController {
   constructor() {
     console.log('wild has loaded')
     this.getPokimanApi()
+    AppState.on('wildPokimans', _drawWildPokiman)
   }
 
   async getPokimanApi(){
